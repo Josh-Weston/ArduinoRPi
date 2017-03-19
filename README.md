@@ -7,5 +7,8 @@ To create bluetooth connection, run the following commands from the RPi terminal
 **Release RFCOMM**
 `sudo rfcomm release 0`
 
+**Evernote Notes**
+https://www.evernote.com/l/APYYp-XLKYdPXri9bdpeInmNhQ3HudtNwuo
+
 Arduino Code and wiring diagram for Bluetooth can be found on Arduion Create: https://create.arduino.cc/editor/jweston/3dbd933f-5a90-4fa9-82c4-6ebc5d4ae3c7/preview
 
