@@ -12,7 +12,10 @@ To create bluetooth connection, we need to do 3 things:
 You can find my Arduino Code and the fritzing wiring diagram [here](https://create.arduino.cc/editor/jweston/3dbd933f-5a90-4fa9-82c4-6ebc5d4ae3c7/preview)
 
 
+
+
 # Step 2: Setup bluetooth communication on Raspberry Pi #
+
 
 
 
