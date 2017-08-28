@@ -11,6 +11,16 @@ To create bluetooth connection, we need to do 3 things:
 # Step 1: Setup Arduino #
 You can find my Arduino Code and the fritzing wiring diagram [here](https://create.arduino.cc/editor/jweston/3dbd933f-5a90-4fa9-82c4-6ebc5d4ae3c7/preview)
 
+Information about HC05 accessing AT+Commands on HC05:
+
+* We do not need the state pin
+* Do not connect the VCC. Upload your sketch, hold the button on the module, then plug in the VCC. You should be in AT mode.
+* Advertised as 9600 BAUD rate but really 38400 when using AT Mode this way
+* This is considered “mini AT Mode” and certain commands are not available.
+* To use all of the commands, you either need the Arduino to control the module, or you can hold the button in while sending a command (easier method)
+
+* HC-05 commands are different that BLE CC41a (HM10 knockoff). Here is a table of commands:
+
 
 # Step 2: Setup bluetooth communication on Raspberry Pi #
 
