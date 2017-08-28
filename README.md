@@ -21,6 +21,7 @@ Information about HC05 accessing AT+Commands on HC05:
 
 * HC-05 commands are different that BLE CC41a (HM10 knockoff). Here is a table of commands:
 
+![HC05 AT](https://github.com/Josh-Weston/ArduinoRPi/blob/master/HC05.png)
 
 # Step 2: Setup bluetooth communication on Raspberry Pi #
 
