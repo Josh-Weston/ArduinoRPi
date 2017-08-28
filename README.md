@@ -29,7 +29,7 @@ Information about HC05 accessing AT+Commands on HC05:
 
 
 # Step 3: Setup Raspberry Pi to listen and respond to Bluetooth messages #
-
+The Raspberry Pi code I used can be found in this [repository here](https://github.com/Josh-Weston/ArduinoRPi/blob/master/HC05_bluetooth_read.py.
 
 
 
