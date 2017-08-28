@@ -8,6 +8,8 @@ To create bluetooth connection, we need to do 3 things:
 **NOTE: Watch this video for more information, and for an explanation for why I chose the HC-05 over the HM10 knock-off**
 [Video: Arduino and Raspberry Pi Communication](https://www.youtube.com/watch?v=rnuwRSg_uRA&lc=z23atfo5vzndepyxv04t1aokgmi5e4jk1yjotohtn2zjbk0h00410)
 
+**Disclaimer: A lot of trial-and-error went into establishing the connection, so these steps may not be 100% complete; however, they are materially accurate, and should provide enough guidance to troubleshoot issues you encounter.
+
 # Step 1: Setup Arduino #
 You can find my Arduino Code and the fritzing wiring diagram [here](https://create.arduino.cc/editor/jweston/3dbd933f-5a90-4fa9-82c4-6ebc5d4ae3c7/preview)
 
@@ -24,26 +26,29 @@ Information about HC05 accessing AT+Commands on HC05:
 ![HC05 AT](https://github.com/Josh-Weston/ArduinoRPi/blob/master/HC05.png)
 
 # Step 2: Setup bluetooth communication on Raspberry Pi #
+This part can be really easy or tricky depending on your setup. If you are using a Raspberry Pi 3, you will already have a graphical Bluetooth interface that can help with this step. There are 3 things to remember:
 
+1. You need to know the MAC Address of your Bluetooth Module
+2. You need to pair to the Bluetooth Module
+3. You need to open an RFCOMM channel so Raspberry Pi knows it should be communicating. It is not enough to simply pair the devices, you need an RFCOMM channel open.
 
+If you are using the graphical interface, you should be able to find your device and locate its unique MAC address. It will look something like: 98:D3:32:20:82:9D
+
+If you do not have the graphical interface, or are having problems you can follow these steps:
+
+* Type `sudo bluetoothctl` into a terminal and input the admin password if prompted
+* Type `agent on` and press enter. Then type `default-agent` and press enter.
+* Type `scan on` and the raspberry pi will scan for broadcasting Bluetooth devices nearby.
+* Type `pair 98:D3:32:20:82:9D` replacing the MAC Address with that of your bluetooth module
+* Type `info 98:D3:32:20:82:9D` to see information about the device.
+
+Once you have successfully paired the bluetooth module to your Raspberry Pi, you will need to bind to an RFCOMM channel before they can communicate:
+
+1. `sudo rfcomm bind hci0 98:D3:32:20:82:9D 1` will bind the bluetooth device to the RPi bluetooth module
+2. `sudo rfcomm release 0` will release the bluetooth module from rfcomm0
 
 
 # Step 3: Setup Raspberry Pi to listen and respond to Bluetooth messages #
-The Raspberry Pi code I used can be found in this [repository here](https://github.com/Josh-Weston/ArduinoRPi/blob/master/HC05_bluetooth_read.py.
+The Raspberry Pi code I used can be found in this [here.](https://github.com/Josh-Weston/ArduinoRPi/blob/master/HC05_bluetooth_read.py)
 
-
-
-**Connect RFCOMM**
-`sudo rfcomm connect hci0 98:D3:32:20:82:9D 1`
-
-**Release RFCOMM**
-`sudo rfcomm release 0`
-
-**Evernote notes for RPi Bluetooth**
-https://www.evernote.com/l/APYYp-XLKYdPXri9bdpeInmNhQ3HudtNwuo
-
-**Evernote notes for HC05 AT+Mode and connections**
-https://www.evernote.com/l/APYiL7KLZOtKGY6tOc38yGRrSc4Zzerorsk
-
-**Arduino Code and wiring diagram** https://create.arduino.cc/editor/jweston/3dbd933f-5a90-4fa9-82c4-6ebc5d4ae3c7/preview
 
