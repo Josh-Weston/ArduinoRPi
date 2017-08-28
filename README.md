@@ -8,7 +8,7 @@ To create bluetooth connection, we need to do 3 things:
 **NOTE: Watch this video for more information, and for an explanation for why I chose the HC-05 over the HM10 knock-off**
 [Video: Arduino and Raspberry Pi Communication](https://www.youtube.com/watch?v=rnuwRSg_uRA&lc=z23atfo5vzndepyxv04t1aokgmi5e4jk1yjotohtn2zjbk0h00410)
 
-**Disclaimer: A lot of trial-and-error went into establishing the connection, so these steps may not be 100% complete; however, they are materially accurate, and should provide enough guidance to troubleshoot issues you encounter.
+**Disclaimer: A lot of trial-and-error went into establishing the connection, so these steps may not be 100% complete; however, they are materially accurate, and should provide enough guidance to troubleshoot issues you encounter.**
 
 # Step 1: Setup Arduino #
 You can find my Arduino Code and the fritzing wiring diagram [here](https://create.arduino.cc/editor/jweston/3dbd933f-5a90-4fa9-82c4-6ebc5d4ae3c7/preview)
