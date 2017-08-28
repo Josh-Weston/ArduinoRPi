@@ -6,7 +6,7 @@ To create bluetooth connection, we need to do 3 things:
 3. Create a script on the Raspberry Pi to listen to and respond to Bluetooth Serial communication.
 
 **NOTE: Watch this video for more information, and for an explanation for why I chose the HC-05 over the HM10 knock-off**
-[Arduino and Raspberry Pi Communication](https://www.youtube.com/watch?v=rnuwRSg_uRA&lc=z23atfo5vzndepyxv04t1aokgmi5e4jk1yjotohtn2zjbk0h00410)
+[Video: Arduino and Raspberry Pi Communication](https://www.youtube.com/watch?v=rnuwRSg_uRA&lc=z23atfo5vzndepyxv04t1aokgmi5e4jk1yjotohtn2zjbk0h00410)
 
 **Connect RFCOMM**
 `sudo rfcomm connect hci0 98:D3:32:20:82:9D 1`
