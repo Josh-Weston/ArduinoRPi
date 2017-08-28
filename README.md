@@ -16,7 +16,7 @@ You can find my Arduino Code and the fritzing wiring diagram [here](https://crea
 Information about HC05 accessing AT+Commands on HC05:
 
 * We do not need the state pin
-* Do not connect the VCC. Upload your sketch, hold the button on the module, then plug in the VCC. You should be in AT mode.
+* Do not connect the VCC. Hold the button on the module while uploading your sketch. Once uploaded, then plug in the VCC. You should be in AT mode.
 * Advertised as 9600 BAUD rate but really 38400 when using AT Mode this way
 * This is considered “mini AT Mode” and certain commands are not available.
 * To use all of the commands, you either need the Arduino to control the module, or you can hold the button in while sending a command (easier method)
